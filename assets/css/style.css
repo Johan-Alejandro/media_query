@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  background-color: rgb(192, 188, 188);
+}
+.grid-container {
+  display: grid;
+  gap: 0px;
+  grid-template-areas:
+    "nav"
+    "selector"
+    "main"
+    "footer";
+}
+.nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(49, 49, 194);
+}
+.nav i {
+  margin: 10px;
+  color: white;
+}
+.nav h5 {
+  color: white;
+  font-size: 20px;
+}
+.menu {
+  display: none;
+}
+.grid-container .selector select {
+  width: 100%;
+  border-radius: 2px;
+}
+.selector {
+  grid-area: selector;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  grid-area: main;
+}
+.productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.card {
+  display: flex;
+  align-items: center;
+  width: 18rem;
+  margin: 20px;
+  padding: 1rem;
+  border: solid 2px rgb(26, 80, 216);
+  background-color: white;
+}
+.card img {
+  height: 120px;
+  width: 120px;
+  object-fit: contain;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.pagination {
+  justify-content: center;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(73, 73, 197);
+  color: white;
+}
+.iconos {
+  display: flex;
+  margin: 5px;
+}
+.iconos i {
+  margin: 5px;
+}
+@media (min-width: 576px) {
+  .grid-container {
+    display: grid;
+    gap: 0px;
+    grid-template-areas:
+      " nav selector"
+      "nav main "
+      " footer footer";
+  }
+  .nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(49, 49, 194);
+    flex-direction: column;
+  }
+  .nav h5 {
+    margin-top: 20px;
+  }
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+  }
+  .menu a {
+    color: white;
+    font-size: 1rem;
+  }
+  .nav i {
+    display: none;
+  }
+  .main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+  }
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+    width: 14rem;
+    margin: 20px;
+    padding: 1rem;
+    border: solid 2px rgb(26, 80, 216);
+    background-color: white;
+  }
+  .card img {
+    height: 250px;
+    filter: grayscale(100%);
+    transition: filter 2s ease;
+    transform: scale;
+  }
+  .card img:hover {
+    filter: grayscale(0%);
+    scale: 1.8;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+  .footer p {
+    text-align: center;
+    color: white;
+  }
+  .footer {
+    background-color: blue;
+    transition: 1s;
+  }
+  .footer:hover {
+    background-color: red;
+  }
+}
